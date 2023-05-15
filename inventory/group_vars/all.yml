@@ -71,7 +71,7 @@ metal_lb_ip_range: "{{ lookup('env', 'VM_NETWORK') }}80-{{ lookup('env', 'VM_NET
 # Mixing and matching VMs and lxc containers is not supported, ymmv if you want to do this.
 # I would only really recommend using this if you have partiularly low powered proxmox nodes where the overhead of
 # VMs would use a significant portion of your available resources.
-proxmox_lxc_configure: true
+proxmox_lxc_configure: false
 # the user that you would use to ssh into the host, for example if you run ssh some-user@my-proxmox-host,
 # set this value to some-user
 proxmox_lxc_ssh_user: root
