@@ -71,3 +71,29 @@ Interesting commands are:
 - `molecule test`: The "all-in-one" sequence of steps that is executed in CI.
   This includes the `create`, `converge`, `verify`, `side_effect` and `destroy` steps.
   See [`molecule.yml`](default/molecule.yml) for more details.
+
+### Copy kube config
+
+This is done in make, run `make setup-pb`. Manual steps below:
+
+```bash
+mkdir ~/.kube
+```
+
+Then for k3s cluster (k3sm1):
+
+```bash
+scp vagrant@192.168.30.38:~/.kube/config ~/.kube/config
+```
+
+or if single (k3s-single):
+
+```bash
+task k3s:scp-kubeconfig
+```
+
+alternatively manual command:
+
+```bash
+scp vagrant@192.168.30.50:~/.kube/config ~/.kube/config
+```
