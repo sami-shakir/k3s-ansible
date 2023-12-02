@@ -1,0 +1,2 @@
+---
+apiserver_endpoint: "{{ lookup('env', 'VM_NETWORK') }}223"
